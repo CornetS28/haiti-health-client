@@ -10,4 +10,4 @@ class urologHome extends Component {
   }
 }
 
-export default urologHome
+export default urologHome;
