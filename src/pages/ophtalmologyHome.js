@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 
-class home extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Ophtalmology Page</h1>
-      </div>
-    )
-  }
-}
+ class ophtalmologyHome extends Component {
+   render() {
+     return (
+       <div>
+         <h1>Ophtalmology Page</h1>      
+       </div>
+     );
+   }
+ }
 
-export default home;
+
+
+export default ophtalmologyHome;
+
