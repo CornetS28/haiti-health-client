@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Link from "react-router-dom/Link";
+import PropTypes from "prop-types";
+
 import hospitalImage from "../images/hospital1.jpeg";
 import urologyImage from "../images/urology.jpg";
 import ophtalmologyImage from "../images/ophtalmology.jpg";
@@ -87,7 +89,7 @@ class mainHome extends Component {
               <div className={classes.departmentImage}>
                 <img
                   src={urologyImage}
-                  alt="hospital-image"
+                  alt="urology"
                   className={classes.departmentSectionImage}
                 />
               </div>
@@ -105,7 +107,7 @@ class mainHome extends Component {
               <div className={classes.departmentImage}>
                 <img
                   src={ophtalmologyImage}
-                  alt="ophtalmology-image"
+                  alt="ophtalmology"
                   className={classes.departmentSectionImage}
                 />
               </div>
@@ -123,7 +125,7 @@ class mainHome extends Component {
               <div className={classes.departmentImage}>
                 <img
                   src={generalSurgeryImage}
-                  alt="general-surgery-image"
+                  alt="general-surgery"
                   className={classes.departmentSectionImage}
                 />
               </div>
@@ -139,7 +141,7 @@ class mainHome extends Component {
               <div className={classes.departmentImage}>
                 <img
                   src={physiotherapyImage}
-                  alt="physiotherapy-image"
+                  alt="physiotherapy"
                   className={classes.departmentSectionImage}
                 />
               </div>
@@ -156,7 +158,7 @@ class mainHome extends Component {
                 {" "}
                 <img
                   src={radiotherapyImage}
-                  alt="radiotherapy-image"
+                  alt="radiotherapy"
                   className={classes.departmentSectionImage}
                 />
               </div>
@@ -172,7 +174,7 @@ class mainHome extends Component {
               <div className={classes.departmentImage}>
                 <img
                   src={sexualHealthImage}
-                  alt="sexual-health-image"
+                  alt="sexual-health"
                   className={classes.departmentSectionImage}
                 />
               </div>
@@ -202,7 +204,7 @@ class mainHome extends Component {
             <div className={classes.hopitalImage}>
               <img
                 src={hospitalImage}
-                alt="hospital-image"
+                alt="hospital"
                 className={classes.hospitalImage}
               />
             </div>
@@ -211,6 +213,9 @@ class mainHome extends Component {
       </Grid>
     );
   }
+}
+mainHome.propTypes = {
+  classes: PropTypes.object.isRequired,
 }
 
 export default withStyles(styles)(mainHome);

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Link from "react-router-dom/Link";
+import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
+
 import logo from "../images/doctor.svg";
 
 // MUI
@@ -28,7 +30,7 @@ class Navbar extends Component {
            
             <img
             src={logo}
-            alt="logo-image"
+            alt="logo"
           />
           </div>
           <Button color="inherit" component={Link} to="/login">
@@ -44,6 +46,10 @@ class Navbar extends Component {
       </AppBar>
     );
   }
-}
+};
+
+Navbar.protoTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(Navbar);
