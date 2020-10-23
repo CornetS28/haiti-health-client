@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Theme from "../util/theme";
+import FullPatientInfoModal from './modals/FullPatientInfoDialog'
 
 // MUI Stuff
 import Box from "@material-ui/core/Box";
@@ -32,6 +33,18 @@ import Button from "@material-ui/core/Button";
 function Row(props) {
   const { row } = props;
   const [open, setOpen] = React.useState(false);
+  const [
+    isOpenFullPatientInfoModal,
+    setIsOpenFullPatientInfoModal,
+  ] = React.useState(false);
+  
+ const handleFullPatientInfoModal = () => {
+   setIsOpenFullPatientInfoModal(true);
+ };
+
+//  const handleClose = () => {
+//    setOpen(false);
+//  };
 
 const classes = useStyles();
   return (
@@ -52,16 +65,29 @@ const classes = useStyles();
             )}
           </IconButton>
         </TableCell>
-        <Button>
-          <TableCell className={classes.patientFullname} component="th" scope="row">
-          {row.patientName}
-        </TableCell>
+      
+        <Button onClick={handleFullPatientInfoModal}>
+          <TableCell
+            className={classes.patientFullname}
+            component="th"
+            scope="row"
+          >
+            {row.patientName}
+          </TableCell>
         </Button>
-        
-        <TableCell className={classes.patientInfo}  align="right">{row.age}</TableCell>
-        <TableCell className={classes.patientInfo}  align="right">{row.weight}</TableCell>
-        <TableCell className={classes.patientInfo}  align="right">{row.issue}</TableCell>
-        <TableCell className={classes.patientInfo}  align="right">{row.appointment}</TableCell>
+
+        <TableCell className={classes.patientInfo} align="right">
+          {row.age}
+        </TableCell>
+        <TableCell className={classes.patientInfo} align="right">
+          {row.weight}
+        </TableCell>
+        <TableCell className={classes.patientInfo} align="right">
+          {row.issue}
+        </TableCell>
+        <TableCell className={classes.patientInfo} align="right">
+          {row.appointment}
+        </TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -75,8 +101,12 @@ const classes = useStyles();
                   <TableRow>
                     <TableCell>Date</TableCell>
                     <TableCell>Customer</TableCell>
-                    <TableCell className={classes.patientInfo}  align="right">Amount</TableCell>
-                    <TableCell className={classes.patientInfo}  align="right">Total price ($)</TableCell>
+                    <TableCell className={classes.patientInfo} align="right">
+                      Amount
+                    </TableCell>
+                    <TableCell className={classes.patientInfo} align="right">
+                      Total price ($)
+                    </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
