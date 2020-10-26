@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { ResizableBox } from "react-resizable";
+
 import Theme from "../util/theme";
 import FullPatientInfoDialog from "./modals/FullPatientInfo";
 
@@ -62,8 +63,9 @@ const useStyles = makeStyles((theme) => ({
   },
   dialogTitle: {
     color: theme.palette.primary.dark,
-    textTransform: 'uppercase',
+    textTransform: "uppercase",
     fontWeight: 900,
+    padding: "auto!",
   },
 }));
 
@@ -116,7 +118,7 @@ function Row(props) {
             onClose={handleIsCloseDialog}
             // fullWidth
             maxWidth={false}
-            width='sm'
+            width="sm"
             aria-labelledby="form-dialog-title"
           >
             <ResizableBox
@@ -131,7 +133,13 @@ function Row(props) {
               >
                 <CloseIcon />
               </Button>
-              <DialogTitle className={classes.dialogTitle}>Complete History ABout <span style={{color: theme.palette.primary.main}}>John S. Delano</span>
+              <DialogTitle className={classes.dialogTitle}>
+                <h4>
+                  Complete History ABout{" "}
+                  <span style={{ color: theme.palette.primary.main }}>
+                    John S. Delano
+                  </span>
+                </h4>
               </DialogTitle>
               <DialogContent>
                 <FullPatientInfoDialog />
