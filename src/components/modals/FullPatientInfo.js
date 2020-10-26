@@ -29,10 +29,12 @@ const styles = (theme) => ({
     display: "flex",
   },
   userImg: {
-    left: '3%',
-    position: 'relative',
-
-  }
+    left: "3%",
+    position: "relative",
+  },
+  patientHistory: {
+    color: theme.palette.primary.main,
+  },
 });
 
 class FullPatientinfo extends Component {
@@ -48,14 +50,17 @@ class FullPatientinfo extends Component {
         <Grid item sm={12} xs={12} className={[classes.gridRowWrapper]}>
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
-              <div className={classes.singleInfo}>
-                <p>L0: James Brooks Hill </p>
-              </div>
+              <h4>
+                First Name:{" "}
+                <span className={classes.patientHistory}>James Brooks</span>{" "}
+              </h4>
             </div>
           </Grid>
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
-              <p>Last: James Brooks Hill </p>
+              <h4>
+                Last Name: <span className={classes.patientHistory}>Hills</span>
+              </h4>
             </div>
           </Grid>
         </Grid>
@@ -68,25 +73,20 @@ class FullPatientinfo extends Component {
         >
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
-              <p>FirstName: </p>
-              <p>
-                {" "}
-                <span> James Brooks Hill</span>
-              </p>
+              <h4>
+                Age: <span className={classes.patientHistory}>29</span>{" "}
+              </h4>
             </div>
           </Grid>
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
-              <p>LastName: </p>
-              <p>
-                {" "}
-                <span> James Brooks Hill</span>
-              </p>
+              <h4>
+                Phone: <span className={classes.patientHistory}>+509 2373 2233</span>
+              </h4>
             </div>
           </Grid>
         </Grid>
         <Divider className={classes.divider} />
-
         <Grid
           item
           sm={12}
@@ -95,25 +95,21 @@ class FullPatientinfo extends Component {
         >
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
-              <p>FirstName: </p>
-              <p>
-                {" "}
-                <span> James Brooks Hill</span>
-              </p>
+              <h4>
+                Address:{" "}
+                <span className={classes.patientHistory}>32, Rue Clervau, Petion-ville</span>{" "}
+              </h4>
             </div>
           </Grid>
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
-              <p>LastName: </p>
-              <p>
-                {" "}
-                <span> James Brooks Hill</span>
-              </p>
+              <h4>
+               Marital Status: <span className={classes.patientHistory}>Maried</span>
+              </h4>
             </div>
           </Grid>
         </Grid>
         <Divider className={classes.divider} />
-
         <Grid
           item
           sm={12}
@@ -122,131 +118,21 @@ class FullPatientinfo extends Component {
         >
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
-              <p>FirstName: </p>
-              <p>
-                {" "}
-                <span> James Brooks Hill</span>
-              </p>
+              <h4>
+                Emergency Contact:{" "}
+                <span className={classes.patientHistory}>Mrs. Clark Hearald</span>{" "}
+              </h4>
             </div>
           </Grid>
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
-              <p>LastName: </p>
-              <p>
-                {" "}
-                <span> James Brooks Hill</span>
-              </p>
+              <h4>
+                Weight: <span className={classes.patientHistory}>Hills</span>
+              </h4>
             </div>
           </Grid>
         </Grid>
         <Divider className={classes.divider} />
-
-        <Grid
-          item
-          sm={12}
-          xs={12}
-          className={[classes.gridRowWrapper, classes.spacingTop]}
-        >
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>FirstName: </p>
-              <p>
-                {" "}
-                <span> James Brooks Hill</span>
-              </p>
-            </div>
-          </Grid>
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>LastName: </p>
-              <p>
-                {" "}
-                <span> James Brooks Hill</span>
-              </p>
-            </div>
-          </Grid>
-        </Grid>
-        <Divider className={classes.divider} />
-
-        <Grid
-          item
-          sm={12}
-          xs={12}
-          className={[classes.gridRowWrapper, classes.spacingTop]}
-        >
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>FirstName: </p>
-              <p>
-                {" "}
-                <span> James Brooks Hill</span>
-              </p>
-            </div>
-          </Grid>
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>LastName: </p>
-              <p>
-                {" "}
-                <span> James Brooks Hill</span>
-              </p>
-            </div>
-          </Grid>
-        </Grid>
-        <Divider className={classes.divider} />
-
-        <Grid
-          item
-          sm={12}
-          xs={12}
-          className={[classes.gridRowWrapper, classes.spacingTop]}
-        >
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>FirstName: </p>
-              <p>
-                {" "}
-                <span> James Brooks Hill</span>
-              </p>
-            </div>
-          </Grid>
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>LastName: </p>
-              <p>
-                {" "}
-                <span> James Brooks Hill</span>
-              </p>
-            </div>
-          </Grid>
-        </Grid>
-        <Divider className={classes.divider} />
-
-        <Grid
-          item
-          sm={12}
-          xs={12}
-          className={[classes.gridRowWrapper, classes.spacingTop]}
-        >
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>FirstName: </p>
-              <p>
-                {" "}
-                <span> James Brooks Hill</span>
-              </p>
-            </div>
-          </Grid>
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>LastName: </p>
-              <p>
-                {" "}
-                <span> James Brooks Hill</span>
-              </p>
-            </div>
-          </Grid>
-        </Grid>
       </Grid>
     );
   }
