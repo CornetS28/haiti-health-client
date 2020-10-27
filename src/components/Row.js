@@ -61,10 +61,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   dialogTitle: {
-    color: theme.palette.primary.dark,
+    color: theme.palette.dark.main,
     textTransform: "uppercase",
     fontWeight: 900,
-    padding: "auto!",
+   textAlign: 'center'
   },
 }));
 
@@ -121,9 +121,9 @@ function Row(props) {
             aria-labelledby="form-dialog-title"
           >
             <ResizableBox
-              height={550}
+              height={1050}
               width={650}
-              className={classes.resizable}
+              // className={classes.resizable}
             >
               <Button
                 tip="Close"
