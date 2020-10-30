@@ -23,7 +23,6 @@ import Button from "@material-ui/core/Button";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import CloseIcon from "@material-ui/icons/Close";
-import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import theme from "../util/theme";
 
@@ -62,10 +61,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   dialogTitle: {
-    color: theme.palette.primary.dark,
+    color: theme.palette.dark.main,
     textTransform: "uppercase",
     fontWeight: 900,
-    padding: "auto!",
+   textAlign: 'center'
   },
 }));
 
@@ -122,9 +121,9 @@ function Row(props) {
             aria-labelledby="form-dialog-title"
           >
             <ResizableBox
-              height={550}
+              height={1050}
               width={650}
-              className={classes.resizable}
+              // className={classes.resizable}
             >
               <Button
                 tip="Close"
