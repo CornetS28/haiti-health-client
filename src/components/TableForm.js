@@ -14,7 +14,7 @@ import Paper from "@material-ui/core/Paper";
 
 const styles = {
   tableHead: {
-    backgroundColor: Theme.palette.secondary.main,
+    backgroundColor: Theme.palette.secondary.lighter,
     color: Theme.palette.primary.main,
     textTransform: "uppercase",
     fontWeight: "bold",
