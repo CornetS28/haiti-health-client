@@ -17,10 +17,8 @@ const styles = (theme) => ({
   },
   divider: {
     color: "red",
-    // margin: "auto",
     width: "100%",
     marginTop: -20,
-    // marginTop: -40,
   },
   spacingTop: {
     marginTop: -40,
@@ -35,7 +33,7 @@ const styles = (theme) => ({
   },
   userImg: {
     left: "3%",
-    position: "relative",
+   
   },
   patientHistory: {
     color: theme.palette.primary.main,
@@ -62,7 +60,31 @@ const styles = (theme) => ({
     marginLeft: 60,
     marginTop: 10,
     textAlign: "center",
-    borderRadius: '3%',
+    borderRadius: "3%",
+  },
+  doctorNoteContent: {
+    // backgroundColor: "yellow",
+    fontSize: 12,
+  },
+  doctorNoteWrapper: {
+    overflowY: "scroll",
+    height: 145,
+   
+  },
+
+  doctorNoteDate: {
+    // backgroundColor: "pink",
+    color: theme.palette.secondary.main,
+    float: "right",
+    fontSize: 12,
+    fontStyle: "italic",
+    width: "100%",
+    paddingRight: '-40%'
+  },
+  dividerDoctorNote: {
+    marginLeft: 10,
+    marginRight: 10,
+   
   },
 });
 
@@ -79,6 +101,32 @@ class FullPatientinfo extends Component {
           <div className={classes.doctorNote}>
             <h4>Latest Doctor Note:</h4>
             <Divider className={classes.divider} />
+            <div className={classes.doctorNoteWrapper}>
+              <div className={classes.doctorNote2}>
+                <p className={classes.doctorNoteDate}>Jan. 4th, 2019</p>
+                <p className={classes.doctorNoteContent}>
+                  patient need to be on medecin Urgently. Need some C vitamins
+                  too.
+                </p>
+              </div>
+              <Divider className={classes.dividerDoctorNote} />
+              <div className={classes.doctorNote2}>
+                <p className={classes.doctorNoteDate}>Jan. 4th, 2019</p>
+                <p className={classes.doctorNoteContent}>
+                  patient need to be on medecin Urgently. Need some C vitamins
+                  too.
+                </p>
+              </div>
+              <Divider className={classes.dividerDoctorNote} />
+              <div className={classes.doctorNote2}>
+                <p className={classes.doctorNoteDate}>Jan. 4th, 2019</p>
+                <p className={classes.doctorNoteContent}>
+                  patient need to be on medecin Urgently. Need some C vitamins
+                  too.
+                </p>
+              </div>
+              <Divider className={classes.dividerDoctorNote} />
+            </div>
           </div>
         </div>
         <h4 className={classes.section}>Personal Info</h4>
@@ -154,6 +202,81 @@ class FullPatientinfo extends Component {
           </Grid>
         </Grid>
         <Divider className={classes.divider} />
+        <Grid
+          item
+          sm={12}
+          xs={12}
+          className={[classes.gridRowWrapper, classes.spacingTop]}
+        >
+          <Grid item sm={8} xs={12} className="">
+            <div className={classes.singleInfo}>
+              <p>
+                <span className={classes.staticText}>Email: </span>
+                <span className={classes.patientHistory}>
+                  john@gmail.com
+                </span>{" "}
+              </p>
+            </div>
+          </Grid>
+          <Grid item sm={8} xs={12} className="">
+            <div className={classes.singleInfo}>
+              <p>
+                <span className={classes.staticText}>Weight: </span>
+                <span className={classes.patientHistory}>78g</span>
+              </p>
+            </div>
+          </Grid>
+        </Grid>
+        <Divider className={classes.divider} />
+        <Grid
+          item
+          sm={12}
+          xs={12}
+          className={[classes.gridRowWrapper, classes.spacingTop]}
+        >
+          <Grid item sm={8} xs={12} className="">
+            <div className={classes.singleInfo}>
+              <p>
+                <span className={classes.staticText}>Sex: </span>
+                <span className={classes.patientHistory}>Male</span>{" "}
+              </p>
+            </div>
+          </Grid>
+          <Grid item sm={8} xs={12} className="">
+            <div className={classes.singleInfo}>
+              <p>
+                <span className={classes.staticText}>Date Od Birth: </span>
+                <span className={classes.patientHistory}>April 21, 1990</span>
+              </p>
+            </div>
+          </Grid>
+        </Grid>
+        <Divider className={classes.divider} />
+        <Grid
+          item
+          sm={12}
+          xs={12}
+          className={[classes.gridRowWrapper, classes.spacingTop]}
+        >
+          <Grid item sm={8} xs={12} className="">
+            <div className={classes.singleInfo}>
+              <p>
+                <span className={classes.staticText}>Height(inches): </span>
+                <span className={classes.patientHistory}>79</span>{" "}
+              </p>
+            </div>
+          </Grid>
+          {/* <Grid item sm={8} xs={12} className="">
+            <div className={classes.singleInfo}>
+              <p>
+                <span className={classes.staticText}>Date Of Birth: </span>
+                <span className={classes.patientHistory}>April 21, 1990</span>
+              </p>
+            </div>
+          </Grid> */}
+        </Grid>
+        <Divider className={classes.divider} />
+
         <h4 className={classes.section1}>Emergency Contact</h4>
         <Grid
           item
@@ -164,9 +287,7 @@ class FullPatientinfo extends Component {
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
               <p>
-                <span className={classes.staticText}>
-                  Emergency Contact Name:{" "}
-                </span>
+                <span className={classes.staticText}>Contact Name: </span>
                 <span className={classes.patientHistory}>
                   Mrs. Clark Hearald
                 </span>{" "}
@@ -176,9 +297,7 @@ class FullPatientinfo extends Component {
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
               <p>
-                <span className={classes.staticText}>
-                  Emergency Contact Relation:{" "}
-                </span>{" "}
+                <span className={classes.staticText}>Contact Relation: </span>{" "}
                 <span className={classes.patientHistory}>Father</span>
               </p>
             </div>
@@ -195,9 +314,7 @@ class FullPatientinfo extends Component {
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
               <p>
-                <span className={classes.staticText}>
-                  Emergency Contact Email:
-                </span>
+                <span className={classes.staticText}>Contact Email:</span>
                 <span className={classes.patientHistory}>
                   {" "}
                   father@gmail.com
@@ -208,90 +325,14 @@ class FullPatientinfo extends Component {
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
               <p>
-                <span className={classes.staticText}>Phone: </span>
+                <span className={classes.staticText}>Contact Phone: </span>
                 <span className={classes.patientHistory}>+509 2373 2233</span>
-              </p>
-            </div>
-          </Grid>
-        </Grid>
-        <Divider className={classes.divider} />
-        <Grid
-          item
-          sm={12}
-          xs={12}
-          className={[classes.gridRowWrapper, classes.spacingTop]}
-        >
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>
-                <span className={classes.staticText}>Address: </span>
-                <span className={classes.patientHistory}>
-                  32, Rue Clervau, Petion-ville
-                </span>{" "}
-              </p>
-            </div>
-          </Grid>
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>
-                <span className={classes.staticText}>Marital Status: </span>
-                <span className={classes.patientHistory}>Maried</span>
-              </p>
-            </div>
-          </Grid>
-        </Grid>
-        <Divider className={classes.divider} />
-        <Grid
-          item
-          sm={12}
-          xs={12}
-          className={[classes.gridRowWrapper, classes.spacingTop]}
-        >
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>
-                <span className={classes.staticText}>Emergency Contact: </span>
-                <span className={classes.patientHistory}>
-                  Mrs. Clark Hearald
-                </span>{" "}
-              </p>
-            </div>
-          </Grid>
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>
-                <span className={classes.staticText}>Weight: </span>{" "}
-                <span className={classes.patientHistory}>78</span>
               </p>
             </div>
           </Grid>
         </Grid>
         <Divider className={classes.divider} />
 
-        <Grid
-          item
-          sm={12}
-          xs={12}
-          className={[classes.gridRowWrapper, classes.spacingTop]}
-        >
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>
-                <span className={classes.staticText}>Age: </span>
-                <span className={classes.patientHistory}>29</span>{" "}
-              </p>
-            </div>
-          </Grid>
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>
-                <span className={classes.staticText}>Phone: </span>
-                <span className={classes.patientHistory}>+509 2373 2233</span>
-              </p>
-            </div>
-          </Grid>
-        </Grid>
-        <Divider className={classes.divider} />
         <h4 className={classes.section1}>Frequent Illnesses</h4>
         <Grid
           item
@@ -302,18 +343,20 @@ class FullPatientinfo extends Component {
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
               <p>
-                <span className={classes.staticText}>Address: </span>
-                <span className={classes.patientHistory}>
-                  32, Rue Clervau, Petion-ville
-                </span>{" "}
+                <span className={classes.staticText}>
+                  Currently Taken Any Medications:{" "}
+                </span>
+                <span className={classes.patientHistory}>Yes</span>{" "}
               </p>
             </div>
           </Grid>
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
               <p>
-                <span className={classes.staticText}>Marital Status: </span>
-                <span className={classes.patientHistory}>Maried</span>
+                <span className={classes.staticText}>For What Illnesses: </span>
+                <span className={classes.patientHistory}>
+                  Genital Infection, Fever
+                </span>
               </p>
             </div>
           </Grid>
@@ -328,18 +371,18 @@ class FullPatientinfo extends Component {
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
               <p>
-                <span className={classes.staticText}>Emergency Contact: </span>
-                <span className={classes.patientHistory}>
-                  Mrs. Clark Hearald
-                </span>{" "}
+                <span className={classes.staticText}>
+                  Latest Hopital Visited:{" "}
+                </span>
+                <span className={classes.patientHistory}>Hopital Espoir</span>{" "}
               </p>
             </div>
           </Grid>
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
               <p>
-                <span className={classes.staticText}>Weight: </span>{" "}
-                <span className={classes.patientHistory}>78</span>
+                <span className={classes.staticText}>Doctor (optional): </span>{" "}
+                <span className={classes.patientHistory}>N/A</span>
               </p>
             </div>
           </Grid>
@@ -354,33 +397,11 @@ class FullPatientinfo extends Component {
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
               <p>
-                <span className={classes.staticText}>Age: </span>
-                <span className={classes.patientHistory}>29</span>{" "}
-              </p>
-            </div>
-          </Grid>
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>
-                <span className={classes.staticText}>Phone: </span>
-                <span className={classes.patientHistory}>+509 2373 2233</span>
-              </p>
-            </div>
-          </Grid>
-        </Grid>
-        <Divider className={classes.divider} />
-        <Grid
-          item
-          sm={12}
-          xs={12}
-          className={[classes.gridRowWrapper, classes.spacingTop]}
-        >
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>
-                <span className={classes.staticText}>Address: </span>
+                <span className={classes.staticText}>
+                  Reason for Registration:{" "}
+                </span>
                 <span className={classes.patientHistory}>
-                  32, Rue Clervau, Petion-ville
+                  Would like to make a complete check up. Blablabla
                 </span>{" "}
               </p>
             </div>
@@ -388,39 +409,14 @@ class FullPatientinfo extends Component {
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
               <p>
-                <span className={classes.staticText}>Marital Status: </span>
-                <span className={classes.patientHistory}>Maried</span>
+                <span className={classes.staticText}>More ABout You: </span>
+                <span className={classes.patientHistory}>N/A</span>
               </p>
             </div>
           </Grid>
         </Grid>
         <Divider className={classes.divider} />
-        <Grid
-          item
-          sm={12}
-          xs={12}
-          className={[classes.gridRowWrapper, classes.spacingTop]}
-        >
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>
-                <span className={classes.staticText}>Emergency Contact: </span>
-                <span className={classes.patientHistory}>
-                  Mrs. Clark Hearald
-                </span>{" "}
-              </p>
-            </div>
-          </Grid>
-          <Grid item sm={8} xs={12} className="">
-            <div className={classes.singleInfo}>
-              <p>
-                <span className={classes.staticText}>Weight: </span>{" "}
-                <span className={classes.patientHistory}>78</span>
-              </p>
-            </div>
-          </Grid>
-        </Grid>
-        <Divider className={classes.divider} />
+
         <h4 className={classes.section1}>Diagnostic</h4>
         <Grid
           item
@@ -431,18 +427,16 @@ class FullPatientinfo extends Component {
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
               <p>
-                <span className={classes.staticText}>Emergency Contact: </span>
-                <span className={classes.patientHistory}>
-                  Mrs. Clark Hearald
-                </span>{" "}
+                <span className={classes.staticText}>Illinesses: </span>
+                <span className={classes.patientHistory}>Turbeculous</span>{" "}
               </p>
             </div>
           </Grid>
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
               <p>
-                <span className={classes.staticText}>Weight: </span>{" "}
-                <span className={classes.patientHistory}>78</span>
+                <span className={classes.staticText}>Recommendation: </span>{" "}
+                <span className={classes.patientHistory}>Blablabla</span>
               </p>
             </div>
           </Grid>
