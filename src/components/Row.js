@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   closeDialogue: {
     position: "relative",
     left: "90%",
-    top: "5%",
+    top: "3%",
     color: Theme.palette.primary.main,
   },
   resizable: {
