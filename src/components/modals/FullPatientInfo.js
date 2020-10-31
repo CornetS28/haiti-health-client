@@ -2,13 +2,11 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-import UserImage from '../../components/UserImage'
+import UserImage from "../../components/UserImage";
 
 // MUI Stuff
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
-
-
 
 const styles = (theme) => ({
   ...theme.palette.primary,
@@ -16,9 +14,9 @@ const styles = (theme) => ({
     display: "flex",
   },
   divider: {
-    color: "red",
-    width: "100%",
+    width: "95%",
     marginTop: -20,
+    margin: "auto",
   },
   spacingTop: {
     marginTop: -40,
@@ -32,8 +30,7 @@ const styles = (theme) => ({
     fontWeight: "bold",
   },
   userImg: {
-    left: "3%",
-   
+    marginLeft: "4%",
   },
   patientHistory: {
     color: theme.palette.primary.main,
@@ -53,82 +50,197 @@ const styles = (theme) => ({
   topInfo: {
     display: "flex",
   },
-  doctorNote: {
+
+  doctorNoteWrapper: {
     backgroundColor: theme.palette.secondary.lightest,
-    height: "97%",
+    // height: "97%",
     width: 330,
+    borderRadius: "3%",
     marginLeft: 60,
     marginTop: 10,
-    textAlign: "center",
-    borderRadius: "3%",
   },
-  doctorNoteContent: {
-    // backgroundColor: "yellow",
-    fontSize: 12,
-  },
-  doctorNoteWrapper: {
+  scrollableContent: {
     overflowY: "scroll",
-    height: 145,
-   
+    height: 155,
+    marginLeft: 10,
+    marginTop: 10,
   },
 
-  doctorNoteDate: {
-    // backgroundColor: "pink",
-    color: theme.palette.secondary.main,
-    float: "right",
-    fontSize: 12,
-    fontStyle: "italic",
-    width: "100%",
-    paddingRight: '-40%'
+  doctorNoteTitle: {
+    textAlign: "center",
+    color: theme.palette.dark.main,
+    marginTop: 10,
   },
-  dividerDoctorNote: {
+  doctorNoteContent: {
     marginLeft: 10,
     marginRight: 10,
-   
+  },
+  doctorNoteContent: {
+    fontSize: 12,
+  },
+  doctorNoteStaticText: {
+    color: theme.palette.dark.main,
+    fontWeight: "bold",
+    marginTop: -2,
+    marginBottom: 2,
+  },
+  patientStateValue: {
+    color: theme.palette.secondary.main,
+    fontWeight: "normal",
+  },
+  doctorNoteDate: {
+    fontStyle: "italic",
+    color: theme.palette.primary.main,
+    marginTop: -1,
+    paddingLeft: "70%",
+  },
+  dividerDoctorNote: {
+    margin: "-5px 10px 10px 5px",
+  },
+  extremeUrgent: {
+    color: theme.palette.emergencyColor.extremeUrgent,
+    fontWeight: "normal",
+  },
+  urgent: {
+    color: theme.palette.emergencyColor.urgent,
+    fontWeight: "normal",
+  },
+  notTooUrgent: {
+    color: theme.palette.emergencyColor.notTooUrgent,
+    fontWeight: "normal",
+  },
+  normal: {
+    color: theme.palette.primary.main,
+    fontWeight: "normal",
   },
 });
 
 class FullPatientinfo extends Component {
- 
   render() {
-     const { classes } = this.props;
+    const { classes } = this.props;
     return (
       <Grid container spacing={4}>
         <div className={classes.topInfo}>
           <div className={classes.userImg}>
             <UserImage />
           </div>
-          <div className={classes.doctorNote}>
-            <h4>Latest Doctor Note:</h4>
+          <div className={classes.doctorNoteWrapper}>
+            <h4 className={classes.doctorNoteTitle}>Latest Doctor Note:</h4>
             <Divider className={classes.divider} />
-            <div className={classes.doctorNoteWrapper}>
-              <div className={classes.doctorNote2}>
-                <p className={classes.doctorNoteDate}>Jan. 4th, 2019</p>
-                <p className={classes.doctorNoteContent}>
-                  patient need to be on medecin Urgently. Need some C vitamins
-                  too.
+            <div className={classes.scrollableContent}>
+              <div className={classes.doctorNoteContent}>
+                <p className={classes.doctorNoteStaticText}>
+                  Patient State:{" "}
+                  <span className={classes.extremeUrgent}> Extreme Urgent</span>
                 </p>
+                <p className={classes.doctorNoteStaticText}>
+                  Current Medication Taken:{" "}
+                  <span className={classes.patientStateValue}>
+                    {" "}
+                    Amoxisilin 500g
+                  </span>
+                </p>
+
+                <p className={classes.doctorNoteStaticText}>
+                  Recommendation:{" "}
+                  <span className={classes.patientStateValue}>
+                    {" "}
+                    patient need to be on medecin Urgently. Need some C vitamins
+                    too. patient need to be on medecin Urgently. Need some C
+                    vitamins too. patient need to be on medecin Urgently. Need
+                    some C vitamins too. patient need to be on medecin Urgently.
+                    Need some C vitamins too. 500g
+                  </span>
+                </p>
+                <p className={classes.doctorNoteDate}>Jan. 4th, 2014</p>
               </div>
               <Divider className={classes.dividerDoctorNote} />
-              <div className={classes.doctorNote2}>
-                <p className={classes.doctorNoteDate}>Jan. 4th, 2019</p>
-                <p className={classes.doctorNoteContent}>
-                  patient need to be on medecin Urgently. Need some C vitamins
-                  too.
+
+              <div className={classes.doctorNoteContent}>
+                <p className={classes.doctorNoteStaticText}>
+                  Patient State: <span className={classes.urgent}>Urgent</span>
                 </p>
+                <p className={classes.doctorNoteStaticText}>
+                  Current Medication Taken:{" "}
+                  <span className={classes.patientStateValue}>
+                    {" "}
+                    Amoxisilin 500g
+                  </span>
+                </p>
+
+                <p className={classes.doctorNoteStaticText}>
+                  Recommendation:{" "}
+                  <span className={classes.patientStateValue}>
+                    {" "}
+                    patient need to be on medecin Urgently. Need some C vitamins
+                    too. patient need to be on medecin Urgently. Need some C
+                    vitamins too. patient need to be on medecin Urgently. Need
+                    some C vitamins too. patient need to be on medecin Urgently.
+                    Need some C vitamins too. 500g
+                  </span>
+                </p>
+                <p className={classes.doctorNoteDate}>Jan. 4th, 2014</p>
               </div>
               <Divider className={classes.dividerDoctorNote} />
-              <div className={classes.doctorNote2}>
-                <p className={classes.doctorNoteDate}>Jan. 4th, 2019</p>
-                <p className={classes.doctorNoteContent}>
-                  patient need to be on medecin Urgently. Need some C vitamins
-                  too.
+
+              <div className={classes.doctorNoteContent}>
+                <p className={classes.doctorNoteStaticText}>
+                  Patient State:{" "}
+                  <span className={classes.notTooUrgent}>Not Too Urgent</span>
                 </p>
+                <p className={classes.doctorNoteStaticText}>
+                  Current Medication Taken:{" "}
+                  <span className={classes.patientStateValue}>
+                    {" "}
+                    Amoxisilin 500g
+                  </span>
+                </p>
+
+                <p className={classes.doctorNoteStaticText}>
+                  Recommendation:{" "}
+                  <span className={classes.patientStateValue}>
+                    {" "}
+                    patient need to be on medecin Urgently. Need some C vitamins
+                    too. patient need to be on medecin Urgently. Need some C
+                    vitamins too. patient need to be on medecin Urgently. Need
+                    some C vitamins too. patient need to be on medecin Urgently.
+                    Need some C vitamins too. 500g
+                  </span>
+                </p>
+                <p className={classes.doctorNoteDate}>Jan. 4th, 2014</p>
+              </div>
+              <Divider className={classes.dividerDoctorNote} />
+
+              <div className={classes.doctorNoteContent}>
+                <p className={classes.doctorNoteStaticText}>
+                  Patient State: <span className={classes.normal}> Normal</span>
+                </p>
+                <p className={classes.doctorNoteStaticText}>
+                  Current Medication Taken:{" "}
+                  <span className={classes.patientStateValue}>
+                    {" "}
+                    Amoxisilin 500g
+                  </span>
+                </p>
+
+                <p className={classes.doctorNoteStaticText}>
+                  Recommendation:{" "}
+                  <span className={classes.patientStateValue}>
+                    {" "}
+                    patient need to be on medecin Urgently. Need some C vitamins
+                    too. patient need to be on medecin Urgently. Need some C
+                    vitamins too. patient need to be on medecin Urgently. Need
+                    some C vitamins too. patient need to be on medecin Urgently.
+                    Need some C vitamins too. 500g
+                  </span>
+                </p>
+                <p className={classes.doctorNoteDate}>Jan. 4th, 2014</p>
               </div>
               <Divider className={classes.dividerDoctorNote} />
             </div>
           </div>
         </div>
+
         <h4 className={classes.section}>Personal Info</h4>
         <Grid item sm={12} xs={12} className={[classes.gridRowWrapper]}>
           <Grid item sm={8} xs={12} className="">
@@ -245,7 +357,7 @@ class FullPatientinfo extends Component {
           <Grid item sm={8} xs={12} className="">
             <div className={classes.singleInfo}>
               <p>
-                <span className={classes.staticText}>Date Od Birth: </span>
+                <span className={classes.staticText}>Date Of Birth: </span>
                 <span className={classes.patientHistory}>April 21, 1990</span>
               </p>
             </div>
@@ -446,5 +558,8 @@ class FullPatientinfo extends Component {
     );
   }
 }
+FullPatientinfo.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(FullPatientinfo);
