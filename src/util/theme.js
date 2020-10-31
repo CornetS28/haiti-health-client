@@ -18,8 +18,8 @@ export default {
     },
     emergencyColor: {
       extremeUrgent: "#FF0000",
-      urgent: "#FF0033",
-      notToUrgent: '#FF9933',
+      urgent: "#C71585",
+      notTooUrgent: "#FF9933",
     },
     typography: {
       useNextVariants: true,
