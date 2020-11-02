@@ -14,7 +14,7 @@ export default {
       main: "#000000",
       light: "#282828",
       lighter: "#505050",
-      lighter: "#707070",
+      lightest: "#707070",
     },
     emergencyColor: {
       extremeUrgent: "#FF0000",
