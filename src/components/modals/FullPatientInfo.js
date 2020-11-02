@@ -1,8 +1,10 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 
+// Components
 import UserImage from "../../components/UserImage";
+import DoctorNotes from "../DoctorNotes"
 
 // MUI Stuff
 import Grid from "@material-ui/core/Grid";
@@ -53,49 +55,22 @@ const styles = (theme) => ({
 
   doctorNoteWrapper: {
     backgroundColor: theme.palette.secondary.lightest,
-    // height: "97%",
     width: 330,
     borderRadius: "3%",
     marginLeft: 60,
     marginTop: 10,
   },
+
   scrollableContent: {
     overflowY: "scroll",
     height: 155,
     marginLeft: 10,
     marginTop: 10,
   },
-
   doctorNoteTitle: {
     textAlign: "center",
     color: theme.palette.dark.main,
     marginTop: 10,
-  },
-  doctorNoteContent: {
-    marginLeft: 10,
-    marginRight: 10,
-  },
-  doctorNoteContent: {
-    fontSize: 12,
-  },
-  doctorNoteStaticText: {
-    color: theme.palette.dark.main,
-    fontWeight: "bold",
-    marginTop: -2,
-    marginBottom: 2,
-  },
-  patientStateValue: {
-    color: theme.palette.secondary.main,
-    fontWeight: "normal",
-  },
-  doctorNoteDate: {
-    fontStyle: "italic",
-    color: theme.palette.primary.main,
-    marginTop: -1,
-    paddingLeft: "70%",
-  },
-  dividerDoctorNote: {
-    margin: "-5px 10px 10px 5px",
   },
   extremeUrgent: {
     color: theme.palette.emergencyColor.extremeUrgent,
@@ -115,9 +90,56 @@ const styles = (theme) => ({
   },
 });
 
+const notes = [
+  {
+    patientState: "Extreme Urgent",
+    doctorNoteDate: "Dec 31, 2012",
+    doctorName: "ALicia Hope",
+    recommendation: "Ampicilin 500mg",
+    currentMedicationTaken:
+      "patient need to be on medecin Urgently. Need some C vitamins too. patient need to be on medecin Urgently. Need some C vitamins too. patient need to be on medecin Urgently Need some C vitamins too. patient need to be on medecin Urgently. Need some C vitamins too. 500g",
+  },
+  {
+    patientState: "Urgent",
+    doctorNoteDate: "Jan 31, 2012",
+    doctorName: "Dany Kenson",
+    recommendation: "Amoxcisilin 500mg",
+    currentMedicationTaken:
+      "patient need to be on medecin Urgently. Need some C vitamins too. patient need to be on medecin Urgently. Need some C vitamins too. patient need to be on medecin Urgently Need some C vitamins too. patient need to be on medecin Urgently. Need some C vitamins too. 500g",
+  },
+  {
+    patientState: "Not Too Urgent",
+    doctorNoteDate: "Feb 11, 2012",
+    doctorName: "Certil Remy",
+    recommendation: "Dolostop",
+    currentMedicationTaken:
+      "patient need to be on medecin Urgently. Need some C vitamins too. patient need to be on medecin Urgently. Need some C vitamins too. patient need to be on medecin Urgently Need some C vitamins too. patient need to be on medecin Urgently. Need some C vitamins too. 500g",
+  },
+  {
+    patientState: "Normal",
+    doctorNoteDate: "Mar 31, 2012",
+    doctorName: "Dany Kenson",
+    recommendation: "Ampicilin 500mg",
+    currentMedicationTaken:
+      "patient need to be on medecin Urgently. Need some C vitamins too. patient need to be on medecin Urgently. Need some C vitamins too. patient need to be on medecin Urgently Need some C vitamins too. patient need to be on medecin Urgently. Need some C vitamins too. 500g",
+  },
+];
+
 class FullPatientinfo extends Component {
   render() {
-    const { classes } = this.props;
+    const {
+      classes
+    } = this.props;
+    let doctorNotes = notes.map((doctorNote) => (
+      <DoctorNotes
+        patientState={doctorNote.patientState}
+        currentMedicationTaken={doctorNote.currentMedicationTaken}
+        recommendation={doctorNote.recommendation}
+        doctorName={doctorNote.doctorName}
+        doctorNoteDate={doctorNote.doctorNoteDate}
+      />
+    ));
+  
     return (
       <Grid container spacing={4}>
         <div className={classes.topInfo}>
@@ -127,117 +149,7 @@ class FullPatientinfo extends Component {
           <div className={classes.doctorNoteWrapper}>
             <h4 className={classes.doctorNoteTitle}>Latest Doctor Note:</h4>
             <Divider className={classes.divider} />
-            <div className={classes.scrollableContent}>
-              <div className={classes.doctorNoteContent}>
-                <p className={classes.doctorNoteStaticText}>
-                  Patient State:{" "}
-                  <span className={classes.extremeUrgent}> Extreme Urgent</span>
-                </p>
-                <p className={classes.doctorNoteStaticText}>
-                  Current Medication Taken:{" "}
-                  <span className={classes.patientStateValue}>
-                    {" "}
-                    Amoxisilin 500g
-                  </span>
-                </p>
-
-                <p className={classes.doctorNoteStaticText}>
-                  Recommendation:{" "}
-                  <span className={classes.patientStateValue}>
-                    {" "}
-                    patient need to be on medecin Urgently. Need some C vitamins
-                    too. patient need to be on medecin Urgently. Need some C
-                    vitamins too. patient need to be on medecin Urgently. Need
-                    some C vitamins too. patient need to be on medecin Urgently.
-                    Need some C vitamins too. 500g
-                  </span>
-                </p>
-                <p className={classes.doctorNoteDate}>Jan. 4th, 2014</p>
-              </div>
-              <Divider className={classes.dividerDoctorNote} />
-
-              <div className={classes.doctorNoteContent}>
-                <p className={classes.doctorNoteStaticText}>
-                  Patient State: <span className={classes.urgent}>Urgent</span>
-                </p>
-                <p className={classes.doctorNoteStaticText}>
-                  Current Medication Taken:{" "}
-                  <span className={classes.patientStateValue}>
-                    {" "}
-                    Amoxisilin 500g
-                  </span>
-                </p>
-
-                <p className={classes.doctorNoteStaticText}>
-                  Recommendation:{" "}
-                  <span className={classes.patientStateValue}>
-                    {" "}
-                    patient need to be on medecin Urgently. Need some C vitamins
-                    too. patient need to be on medecin Urgently. Need some C
-                    vitamins too. patient need to be on medecin Urgently. Need
-                    some C vitamins too. patient need to be on medecin Urgently.
-                    Need some C vitamins too. 500g
-                  </span>
-                </p>
-                <p className={classes.doctorNoteDate}>Jan. 4th, 2014</p>
-              </div>
-              <Divider className={classes.dividerDoctorNote} />
-
-              <div className={classes.doctorNoteContent}>
-                <p className={classes.doctorNoteStaticText}>
-                  Patient State:{" "}
-                  <span className={classes.notTooUrgent}>Not Too Urgent</span>
-                </p>
-                <p className={classes.doctorNoteStaticText}>
-                  Current Medication Taken:{" "}
-                  <span className={classes.patientStateValue}>
-                    {" "}
-                    Amoxisilin 500g
-                  </span>
-                </p>
-
-                <p className={classes.doctorNoteStaticText}>
-                  Recommendation:{" "}
-                  <span className={classes.patientStateValue}>
-                    {" "}
-                    patient need to be on medecin Urgently. Need some C vitamins
-                    too. patient need to be on medecin Urgently. Need some C
-                    vitamins too. patient need to be on medecin Urgently. Need
-                    some C vitamins too. patient need to be on medecin Urgently.
-                    Need some C vitamins too. 500g
-                  </span>
-                </p>
-                <p className={classes.doctorNoteDate}>Jan. 4th, 2014</p>
-              </div>
-              <Divider className={classes.dividerDoctorNote} />
-
-              <div className={classes.doctorNoteContent}>
-                <p className={classes.doctorNoteStaticText}>
-                  Patient State: <span className={classes.normal}> Normal</span>
-                </p>
-                <p className={classes.doctorNoteStaticText}>
-                  Current Medication Taken:{" "}
-                  <span className={classes.patientStateValue}>
-                    {" "}
-                    Amoxisilin 500g
-                  </span>
-                </p>
-
-                <p className={classes.doctorNoteStaticText}>
-                  Recommendation:{" "}
-                  <span className={classes.patientStateValue}>
-                    {" "}
-                    patient need to be on medecin Urgently. Need some C vitamins
-                    too. patient need to be on medecin Urgently. Need some C
-                    vitamins too. patient need to be on medecin Urgently. Need
-                    some C vitamins too. patient need to be on medecin Urgently.
-                    Need some C vitamins too. 500g
-                  </span>
-                </p>
-                <p className={classes.doctorNoteDate}>Jan. 4th, 2014</p>
-              </div>
-              <Divider className={classes.dividerDoctorNote} />
-            </div>
+            <div className={classes.scrollableContent}>{doctorNotes}</div>
           </div>
         </div>
 
