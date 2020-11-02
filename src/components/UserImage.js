@@ -35,7 +35,7 @@ class UserImage extends Component {
       <Paper classeName={classes.paper}>
         <div className={classes.image}>
           <div className="user-image">
-            <img src={userImage} alt="user-image" className="user-image" />
+            <img src={userImage} alt="user-portrait" className="user-image" />
           </div>
         </div>
       </Paper>
@@ -43,9 +43,9 @@ class UserImage extends Component {
     return userPhoto;
   }
 }
-const mapStateToProps = (state) => ({
-  // user: state.user
-});
+// const mapStateToProps = (state) => ({
+//   // user: state.user
+// });
 
 UserImage.propTypes = {
   classes: PropTypes.object.isRequired,

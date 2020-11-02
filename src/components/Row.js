@@ -5,7 +5,6 @@ import { ResizableBox } from "react-resizable";
 import Theme from "../util/theme";
 import FullPatientInfoDialog from "./modals/FullPatientInfo";
 
-
 // MUI Stuff
 import Box from "@material-ui/core/Box";
 import Collapse from "@material-ui/core/Collapse";
@@ -64,15 +63,31 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.dark.main,
     textTransform: "uppercase",
     fontWeight: 900,
-   textAlign: 'center'
+    textAlign: "center",
   },
+  userHistory: {
+    color: theme.palette.primary.main,
+    textTransform: "uppercase",
+    fontSize: 15,
+    fontWeight: "bold",
+  },
+  subTableHeader: {
+    backgroundColor: theme.palette.secondary.lightest,
+  },
+  subTableHeaderRow: {
+    color: theme.palette.primary.main,
+    fontWeight: "bold",
+  },
+  // subTableRow: {
+  //   borderColor: theme.palette.primary.main,
+  // },
 }));
 
 function Row(props) {
   const { row } = props;
   const [isOpenHistory, setIsOpenHistory] = React.useState(false);
   const [isOpenDialog, setIsOpenDialog] = React.useState(false);
- 
+
   const hanleIsOpenDialog = () => {
     setIsOpenDialog(true);
   };
@@ -164,32 +179,49 @@ function Row(props) {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={isOpenHistory} timeout="auto" unmountOnExit>
             <Box margin={1}>
-              <Typography variant="h6" gutterBottom component="div">
-                History
+              <Typography
+                variant="h6"
+                gutterBottom
+                component="div"
+                className={classes.userHistory}
+              >
+                Partial History
               </Typography>
               <Table size="small" aria-label="purchases">
                 <TableHead>
-                  <TableRow>
-                    <TableCell>Date</TableCell>
-                    <TableCell>Customer</TableCell>
-                    <TableCell className={classes.patientInfo} align="right">
-                      Amount
+                  <TableRow className={classes.subTableHeader}>
+                    <TableCell className={classes.subTableHeaderRow}>
+                      Treatment Status
                     </TableCell>
-                    <TableCell className={classes.patientInfo} align="right">
-                      Total price ($)
+                    <TableCell className={classes.subTableHeaderRow}>
+                      Latest Doctor
+                    </TableCell>
+                    <TableCell
+                      className={classes.subTableHeaderRow}
+                      align="right"
+                    >
+                      Payment Status
+                    </TableCell>
+                    <TableCell
+                      className={classes.subTableHeaderRow}
+                      align="right"
+                    >
+                      Recent Appointments
                     </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {row.history.map((historyRow) => (
-                    <TableRow key={historyRow.date}>
+                    <TableRow key={historyRow.appointmentDate}>
                       <TableCell component="th" scope="row">
-                        {historyRow.date}
+                        {historyRow.treamtmentStatus}
                       </TableCell>
-                      <TableCell>{historyRow.customerId}</TableCell>
-                      <TableCell align="right">{historyRow.amount}</TableCell>
+                      <TableCell>{historyRow.lastDoctorName}</TableCell>
                       <TableCell align="right">
-                        {Math.round(historyRow.amount * row.price * 100) / 100}
+                        $ {historyRow.paymentStatus}
+                      </TableCell>
+                      <TableCell align="right">
+                        {historyRow.appointmentDate}
                       </TableCell>
                     </TableRow>
                   ))}
@@ -222,9 +254,6 @@ Row.propTypes = {
 };
 
 export default Row;
-
-
-
 
 // import React, { Component, Fragment } from "react";
 // import PropTypes from "prop-types";
@@ -371,7 +400,7 @@ export default Row;
 //           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
 //             <Collapse
 //               in={this.state.isOpenHistory}
-             
+
 //               // hidden={!expanded}
 //               timeout="auto"
 //               unmountOnExit
@@ -437,5 +466,3 @@ export default Row;
 // };
 
 // export default withStyles(styles)(Row);
-
-

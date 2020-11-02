@@ -9,14 +9,22 @@ const createData = (patientName, age, weight, issue, appointment, price) => {
     price,
     history: [
       {
-        date: "2020-01-05",
-        customerId: "11091700",
-        amount: 3,
+        appointmentDate: "Feb. 12th, 2011",
+        treamtmentStatus: "Completed",
+        lastDoctorName: "Pauline Hill",
+        paymentStatus: '1334.45',
       },
       {
-        date: "2020-01-02",
-        customerId: "Anonymous",
-        amount: 1,
+        appointmentDate: "Jan. 10th, 2011",
+        treamtmentStatus: "Incompleted",
+        lastDoctorName: "Carolina Brooks",
+        paymentStatus: '122.23',
+      },
+      {
+        appointmentDate: "Dec. 10th, 2010",
+        treamtmentStatus: "Incompleted",
+        lastDoctorName: "Carolina Brooks",
+        paymentStatus: '0.00',
       },
     ],
   };
