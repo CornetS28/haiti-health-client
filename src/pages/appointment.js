@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import PropTypes from "prop-types";
 
+// Components
+
+import DoctorImage from "../components/DoctorImage";
+
 //MUI
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
@@ -92,6 +96,10 @@ const styles = (theme) => ({
     margin: "-5px 10px 10px 5px",
     backgroundColor: theme.palette.secondary.lighter,
   },
+  dividerDoctorInfo: {
+    margin: "-5px 10px 10px 5px",
+    backgroundColor: theme.palette.primary.contrastText,
+  },
   scrollableTestimials: {
     overflowY: "scroll",
     height: 500,
@@ -120,6 +128,35 @@ const styles = (theme) => ({
   authorPost: {
     fontStyle: "italic",
     color: theme.palette.secondary.lighter,
+  },
+  doctorPhoto: {
+    height: 150,
+    width: 150,
+    marginLeft: 10,
+  },
+  doctorDetails: {
+    marginLeft: 10,
+    marginRight: 10,
+    display: "flex",
+    fontSize: 14
+  },
+  rowLeft: {
+    // backgroundColor: "red"
+  },
+
+  rowRight: {
+    marginLeft: "5%",
+  },
+  staticText: {
+    fontWeight: "bold",
+  },
+  doctorProfileDetail: {
+    color: theme.palette.primary.main,
+  },
+  rowRightLast: {
+   fontSize: 14,
+    marginLeft: 10,
+    marginRight: 10,
   },
 });
 
@@ -267,8 +304,162 @@ class Appointment extends Component {
 
             <Grid item sm={4} xs={12}>
               <Grid item sm={12} xs={12} className={classes.gridRightWrapper}>
-                {" "}
-                <h5 className={classes.gridTitle}>Doctor Profile</h5>
+                <div>
+                  <h5 className={classes.gridSubTitleLeft}>
+                    Urology Department Leader
+                  </h5>
+                  <Divider className={classes.dividerInfo} />
+                  <div className={classes.doctorPhoto}>
+                    <DoctorImage />
+                  </div>
+                  <Grid container>
+                    <Grid
+                      item
+                      sm={11}
+                      xs={11}
+                      className={classes.doctorDetails}
+                    >
+                      <Grid item sm={6} xs={6} className="">
+                        <div className={classes.rowLeft}>
+                          <p>
+                            <span className={classes.staticText}>
+                              First Name:{" "}
+                            </span>
+                            <span className={classes.doctorProfileDetail}>
+                              James Brooks
+                            </span>{" "}
+                          </p>
+                        </div>
+                      </Grid>
+
+                      <Grid item sm={6} xs={6} className="">
+                        <div className={classes.rowRight}>
+                          <p>
+                            <span className={classes.staticText}>
+                              Last Name:{" "}
+                            </span>
+                            <span className={classes.doctorProfileDetail}>
+                              Hills
+                            </span>
+                          </p>
+                        </div>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                  <Divider className={classes.dividerDoctorInfo} />
+                  <Grid container>
+                    <Grid
+                      item
+                      sm={11}
+                      xs={11}
+                      className={classes.doctorDetails}
+                    >
+                      <Grid item sm={6} xs={6} className="">
+                        <div className={classes.rowLeft}>
+                          <p>
+                            <span className={classes.staticText}>Title: </span>
+                            <span className={classes.doctorProfileDetail}>
+                              Urologist Specialist
+                            </span>{" "}
+                          </p>
+                        </div>
+                      </Grid>
+
+                      <Grid item sm={6} xs={6} className="">
+                        <div className={classes.rowRight}>
+                          <p>
+                            <span className={classes.staticText}>
+                              Current Postion:{" "}
+                            </span>
+                            <span className={classes.doctorProfileDetail}>
+                              Director
+                            </span>
+                          </p>
+                        </div>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                  <Divider className={classes.dividerDoctorInfo} />
+                  <Grid container>
+                    <Grid
+                      item
+                      sm={11}
+                      xs={11}
+                      className={classes.doctorDetails}
+                    >
+                      <Grid item sm={6} xs={6} className="">
+                        <div className={classes.rowLeft}>
+                          <p>
+                            <span className={classes.staticText}>
+                              Interest:{" "}
+                            </span>
+                            <span className={classes.doctorProfileDetail}>
+                              Eyes and Kidney
+                            </span>{" "}
+                          </p>
+                        </div>
+                      </Grid>
+
+                      <Grid item sm={6} xs={6} className="">
+                        <div className={classes.rowRight}>
+                          <p>
+                            <span className={classes.staticText}>
+                              Languages:{" "}
+                            </span>
+                            <span className={classes.doctorProfileDetail}>
+                              French and Creole
+                            </span>
+                          </p>
+                        </div>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                  <Divider className={classes.dividerDoctorInfo} />
+                  <Grid container>
+                    <Grid
+                      item
+                      sm={11}
+                      xs={11}
+                      className={classes.doctorDetails}
+                    >
+                      <Grid item sm={6} xs={6} className="">
+                        <div className={classes.rowLeft}>
+                          <p>
+                            <span className={classes.staticText}>
+                              University:{" "}
+                            </span>
+                            <span className={classes.doctorProfileDetail}>
+                              MIT
+                            </span>{" "}
+                          </p>
+                        </div>
+                      </Grid>
+
+                      <Grid item sm={6} xs={6} className="">
+                        <div className={classes.rowRight}>
+                          <p>
+                            <span className={classes.staticText}>Degree: </span>
+                            <span className={classes.doctorProfileDetail}>
+                              Doctorate
+                            </span>
+                          </p>
+                        </div>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                  <Divider className={classes.dividerDoctorInfo} />
+                  <Grid item sm={12} xs={12} className="">
+                    <div className={classes.rowRightLast}>
+                      <p>
+                        <span className={classes.staticText}>Carreer & Accomplishements: </span>
+                        <span className={classes.doctorProfileDetail}>
+                          dbcd cdjds sdhdsbdbs  dsdd dhjshdbwibeew edbdewbdebdewibdd ejdhed. dedndaednej D ADBEDEKDEJKDKDNE DSSCDSC fvdzfd//.
+                        </span>
+                      </p>
+                    </div>
+                  </Grid>
+                  <Divider className={classes.dividerDoctorInfo} />
+                </div>
               </Grid>
             </Grid>
           </Grid>
@@ -283,112 +474,3 @@ Appointment.propTypes = {
 };
 
 export default withStyles(styles)(Appointment);
-
-// <Grid sm={8} xs={12} className={classes.gridLeftWrapper}>
-//           <h5 className={classes.gridHeader}>Set Up An Appointment +</h5>
-//           <h6 className={classes.gridHeader}> About Urology Department</h6>
-//           <Grid item sm={12} xs={12} className={classes.gridTextContent}>
-//             <Grid item sm={8} xs={12} className={classes.aboutDepGrid}>
-//               <h5 className={classes.gridSubTitleLeft}>General Information</h5>
-//               <div className={classes.gridParaTitle}>Team:</div>
-//               <div className={classes.gridPara}>
-//                 dsfa f ejnv eads ds k vd s ad j sdnjn fds dfsjm cks d
-//                 cjkdsjdsndjsnjdsnkn sndkjnfksn wabfsjbfanfskfsd dsd
-//                 fkdsfdksfksdf dsfnkdsnfsdnfsfnsfns fsf ksd fjdnfknasdfndsl
-//                 fndslnsdlsd sndsdl hkjk dsfa f ejnv eads ds k vd s ad j sdnjn
-//                 fds dfsjm cks d cjkdsjdsndjsnjdsnkn sndkjnfksn wabfsjbfanfskfsd
-//                 dsd fkdsfdksfksdf dsfnkdsnfsdnfsfnsfns fsf ksd fjdnfknasdfndsl
-//                 fndslnsdlsd sndsdl hkjk
-//               </div>
-//               <div className={classes.gridParaTitle}>Equipment:</div>
-//               <div className={classes.gridPara}>
-//                 dsfa f ejnv eads ds k vd s ad j sdnjn fds dfsjm cks d
-//                 cjkdsjdsndjsnjdsnkn sndkjnfksn wabfsjbfanfskfsd dsd
-//                 fkdsfdksfksdf dsfnkdsnfsdnfsfnsfns fsf ksd fjdnfknasdfndsl
-//                 fndslnsdlsd sndsdl hkjk dsfa f ejnv eads ds k vd s ad j sdnjn
-//                 fds dfsjm cks d cjkdsjdsndjsnjdsnkn sndkjnfksn wabfsjbfanfskfsd
-//                 dsd fkdsfdksfksdf dsfnkdsnfsdnfsfnsfns fsf ksd fjdnfknasdfndsl
-//                 fndslnsdlsd sndsdl hkjk
-//               </div>
-//               <div className={classes.gridParaTitle}>Other:</div>
-//               <div className={classes.gridPara}>
-//                 dsfa f ejnv eads ds k vd s ad j sdnjn fds dfsjm cks d
-//                 cjkdsjdsndjsnjdsnkn sndkjnfksn wabfsjbfanfskfsd dsd
-//                 fkdsfdksfksdf dsfnkdsnfsdnfsfnsfns fsf ksd fjdnfknasdfndsl
-//                 fndslnsdlsd sndsdl hkjk
-//               </div>
-//               <div className={classes.gridParaTitle}>More:</div>
-//               <div className={classes.gridPara}>
-//                 dsfa f ejnv eads ds k vd s ad j sdnjn fds dfsjm cks d
-//                 cjkdsjdsndjsnjdsnkn sndkjnfksn wabfsjbfanfskfsd dsd
-//                 fkdsfdksfksdf dsfnkdsnfsdnfsfnsfns fsf ksd fjdnfknasdfndsl
-//                 fndslnsdlsd sndsdl hkjk
-//               </div>
-//             </Grid>
-//             <Grid item sm={4} xs={12} className={classes.testimoialGrid}>
-//               <Grid item sm={8} xs={4} className={classes.gridSubRightWrapper}>
-//                 <h5 className={classes.gridSubTitleRight}>
-//                   {" "}
-//                   <p className={classes.emptySpace}> </p> Testimonials
-//                 </h5>
-//                 <Divider className={classes.dividerTestimonial} />
-//                 <div className={classes.scrollableTestimials}>
-//                   <h6 className={classes.testimialsText}>
-//                     fknfdkm vfd vdfvfdkmvlfmd vdfnfdlfmlmf
-//                     dadfndskdsmdslmldsmfsd ds sd fsd cdsc sdsk sd fsdfsd sd d vd
-//                     j dv dc rf ds ds cdsc sdc dsckdsc sdc s dc sdkkbfdds sdk j
-//                     dkdsssdfdsds sss
-//                   </h6>
-//                   <h6 className={classes.testimialsText}>
-//                     fknfdkm vfd vdfvfdkmvlfmd vdfnfdlfmlmf
-//                     dadfndskdsmdslmldsmfsd ds sd fsd cdsc sdsk sd fsdfsd sd d vd
-//                     j dv dc rf ds ds cdsc sdc dsckdsc sdc s dc sdkkbfdds sdk j
-//                     dkdsssdfdsds sss
-//                   </h6>
-//                   <h6 className={classes.testimialsText}>
-//                     fknfdkm vfd vdfvfdkmvlfmd vdfnfdlfmlmf
-//                     dadfndskdsmdslmldsmfsd ds sd fsd cdsc sdsk sd fsdfsd sd d vd
-//                     j dv dc rf ds ds cdsc sdc dsckdsc sdc s dc sdkkbfdds sdk j
-//                     dkdsssdfdsds sss
-//                   </h6>
-//                   <h6 className={classes.testimialsText}>
-//                     fknfdkm vfd vdfvfdkmvlfmd vdfnfdlfmlmf
-//                     dadfndskdsmdslmldsmfsd ds sd fsd cdsc sdsk sd fsdfsd sd d vd
-//                     j dv dc rf ds ds cdsc sdc dsckdsc sdc s dc sdkkbfdds sdk j
-//                     dkdsssdfdsds sss
-//                   </h6>
-//                   <h6 className={classes.testimialsText}>
-//                     fknfdkm vfd vdfvfdkmvlfmd vdfnfdlfmlmf
-//                     dadfndskdsmdslmldsmfsd ds sd fsd cdsc sdsk sd fsdfsd sd d vd
-//                     j dv dc rf ds ds cdsc sdc dsckdsc sdc s dc sdkkbfdds sdk j
-//                     dkdsssdfdsds sss
-//                   </h6>{" "}
-//                   <h6 className={classes.testimialsText}>
-//                     fknfdkm vfd vdfvfdkmvlfmd vdfnfdlfmlmf
-//                     dadfndskdsmdslmldsmfsd ds sd fsd cdsc sdsk sd fsdfsd sd d vd
-//                     j dv dc rf ds ds cdsc sdc dsckdsc sdc s dc sdkkbfdds sdk j
-//                     dkdsssdfdsds sss
-//                   </h6>
-//                   <h6 className={classes.testimialsText}>
-//                     fknfdkm vfd vdfvfdkmvlfmd vdfnfdlfmlmf
-//                     dadfndskdsmdslmldsmfsd ds sd fsd cdsc sdsk sd fsdfsd sd d vd
-//                     j dv dc rf ds ds cdsc sdc dsckdsc sdc s dc sdkkbfdds sdk j
-//                     dkdsssdfdsds sss
-//                   </h6>{" "}
-//                   <h6 className={classes.testimialsText}>
-//                     fknfdkm vfd vdfvfdkmvlfmd vdfnfdlfmlmf
-//                     dadfndskdsmdslmldsmfsd ds sd fsd cdsc sdsk sd fsdfsd sd d vd
-//                     j dv dc rf ds ds cdsc sdc dsckdsc sdc s dc sdkkbfdds sdk j
-//                     dkdsssdfdsds sss
-//                   </h6>
-//                   <h6 className={classes.testimialsText}>
-//                     fknfdkm vfd vdfvfdkmvlfmd vdfnfdlfmlmf
-//                     dadfndskdsmdslmldsmfsd ds sd fsd cdsc sdsk sd fsdfsd sd d vd
-//                     j dv dc rf ds ds cdsc sdc dsckdsc sdc s dc sdkkbfdds sdk j
-//                     dkdsssdfdsds sss
-//                   </h6>
-//                 </div>
-//               </Grid>
-//             </Grid>
-//           </Grid>
-//         </Grid>
