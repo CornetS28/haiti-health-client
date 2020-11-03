@@ -46,7 +46,6 @@ const styles = {
     marginRight: "-10px",
   },
   gridWrapperImage: {
-    backgroundColor: "red",
     height: "calc(100vh - 114)",
     width: "98%",
     marginLeft: "1.5%",
