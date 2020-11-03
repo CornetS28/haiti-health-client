@@ -18,6 +18,8 @@ import login from "./pages/login";
 import ophtalmologyHome from "./pages/ophtalmologyHome";
 import generalSurgeryHome from "./pages/generalSurgeryHome";
 import urologyHome from "./pages/urologyHome";
+import appointment from "./pages/appointment";
+
 
 const theme = createMuiTheme(themeObjectContent);
 
@@ -44,6 +46,7 @@ class App extends Component {
                   path="/general-surgery"
                   component={generalSurgeryHome}
                 />
+                <Route exact path="/appointment" component={appointment} />
               </Switch>
             </div>
           </Router>
